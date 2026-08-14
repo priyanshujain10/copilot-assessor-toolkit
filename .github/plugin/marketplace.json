@@ -5,13 +5,13 @@
   },
   "metadata": {
     "description": "Marketplace hosting the Copilot Customization Assessor plugin.",
-    "version": "1.0.0"
+    "version": "1.1.0"
   },
   "plugins": [
     {
       "name": "copilot-customization-assessor",
       "description": "Assess a team's GitHub Copilot customization files and produce a professional review.md from an AI Solutions Architect perspective.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "source": ".",
       "license": "MIT",
       "keywords": [

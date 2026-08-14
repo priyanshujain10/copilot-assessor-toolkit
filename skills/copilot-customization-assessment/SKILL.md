@@ -71,7 +71,9 @@ team's GitHub Copilot agentic-workflow implementation.
    [report template](./assets/review-template.md). Fill every section: executive summary,
    confirmed context & constraints, inventory, findings (grouped by severity with evidence,
    rationale + cited doc, and recommendation), a recommended target architecture, and a
-   prioritized remediation roadmap.
+   prioritized remediation roadmap. This is required even when the assessment is clean or
+   near-production-ready — a short Findings section is fine, but a chat-only summary in
+   place of the file is not. The deliverable is the file, not the chat message describing it.
 
 ## Output
 
