@@ -1,0 +1,22 @@
+{
+  "name": "copilot-customization-assessor",
+  "description": "Assess a team's GitHub Copilot customization files (custom agents, instructions, prompts, skills) for architecture quality, correctness, portability, cost efficiency, and alignment with current Copilot capabilities. Produces a professional review.md.",
+  "version": "1.0.0",
+  "author": {
+    "name": "Assessor Toolkit"
+  },
+  "license": "MIT",
+  "keywords": [
+    "copilot",
+    "customization",
+    "assessment",
+    "review",
+    "agents",
+    "skills",
+    "governance",
+    "architecture"
+  ],
+  "category": "code-review",
+  "agents": "agents/",
+  "skills": "skills/"
+}
