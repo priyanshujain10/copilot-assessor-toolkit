@@ -42,16 +42,16 @@ Prerequisite: enable agent plugins in VS Code — set `chat.plugins.enabled` to 
 Or with the GitHub Copilot CLI:
 
 ```bash
-copilot plugin install <owner>/<repo>
+copilot plugin install priyanshujain10/copilot-assessor-toolkit
 ```
 
 ### Option B — add as a marketplace
 
 This repo ships a `marketplace.json`, so it can be registered as a plugin marketplace.
 
-- VS Code: add it to the `chat.plugins.marketplaces` setting, e.g. `"<owner>/<repo>"`, then
+- VS Code: add it to the `chat.plugins.marketplaces` setting, e.g. `"priyanshujain10/copilot-assessor-toolkit"`, then
   search `@agentPlugins` in the Extensions view and install **copilot-customization-assessor**.
-- CLI: `copilot plugin marketplace add <owner>/<repo>` then
+- CLI: `copilot plugin marketplace add priyanshujain10/copilot-assessor-toolkit` then
   `copilot plugin install copilot-customization-assessor@assessor-toolkit-marketplace`.
 
 ### Option C — public discovery
