@@ -6,16 +6,19 @@ assessor can spend reasoning budget on architecture. It has **no third-party dep
 
 ## Run
 
+The cwd is the repo being assessed, not this skill's folder, so resolve the script's path
+relative to this SKILL.md file rather than as a bare relative path:
+
 ```bash
 # Human-readable report
-python scripts/validate_customizations.py <scope-folder>
+python <path-to-this-skill-folder>/scripts/validate_customizations.py <scope-folder>
 
 # Machine-readable (for the agent to parse)
-python scripts/validate_customizations.py <scope-folder> --json
+python <path-to-this-skill-folder>/scripts/validate_customizations.py <scope-folder> --json
 ```
 
-`<scope-folder>` is the folder holding customization files, typically `.github`. If omitted,
-it defaults to `.github` under the current directory.
+`<scope-folder>` is the folder holding customization files, typically `.github`, inside the
+repo being assessed. If omitted, it defaults to `.github` under the current directory.
 
 ## What it checks
 

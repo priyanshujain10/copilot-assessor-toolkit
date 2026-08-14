@@ -37,10 +37,11 @@ team's GitHub Copilot agentic-workflow implementation.
 
 3. **Run the static validator.** Deterministically flags mechanical issues (markdown-fenced
    frontmatter, malformed YAML, absolute paths, missing descriptions, oversized files,
-   name/folder mismatches):
+   name/folder mismatches). The cwd is the repo being assessed, not this skill's folder, so
+   invoke the script via its path relative to this SKILL.md file, not a bare relative path:
 
    ```bash
-   python scripts/validate_customizations.py <scope-folder> --json
+   python <path-to-this-skill-folder>/scripts/validate_customizations.py <scope-folder> --json
    ```
 
    See [validator usage](./references/validator-usage.md). Treat its output as raw evidence,
