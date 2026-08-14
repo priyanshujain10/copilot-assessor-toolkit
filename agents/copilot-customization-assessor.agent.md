@@ -44,8 +44,9 @@ obvious, add anything the repo raises). Always cover these dimensions:
 2. **Scope** — which folder/repo holds the customization files to assess (default `.github`).
 3. **Known issues** — does the assessor want to highlight major issues they've already
    spotted, so you can validate/expand on them?
-4. **Org constraints** — confirm or adjust these presets: *Copilot CLI, MCP, Copilot cloud
-   agents, and hooks are disabled at org level; all repositories are hosted on Azure DevOps.*
+4. **Org constraints** — ask which Copilot features are disabled at org level (e.g. Copilot
+   CLI, MCP, cloud agents, hooks) and which platform hosts the team's repositories (GitHub,
+   GitLab, Azure DevOps, Bitbucket, etc.). Do not assume a default; every team differs.
 5. **Depth/focus** — any priority lenses (architecture simplification, YAML correctness,
    AI-credit/model cost, path portability, security, logic duplication)?
 

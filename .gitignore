@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyc
+
+# Environments
+.venv/
+venv/
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editor
+*.swp
+
+# Generated review output (assessor writes this into the assessed repo, not here)
+/review.md

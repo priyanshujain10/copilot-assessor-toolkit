@@ -43,8 +43,9 @@ let them reference these standards rather than restating them.
 
 ## Cost Efficiency
 
-- **Do not use premium/frontier AI models for deterministic work** (e.g. fetching Azure
-  DevOps work items). Use scripts + CLIs/REST APIs (`az devops`, Azure DevOps REST) instead.
+- **Do not use premium/frontier AI models for deterministic work** (e.g. fetching work items
+  or tickets from Azure DevOps, Jira, GitHub Issues, etc.). Use scripts + CLIs/REST APIs
+  (`az devops`, Jira REST, `gh`) instead — pick the tool matching the team's actual platform.
 - Consolidate multiple integration agents wrapping the same system into one skill or a small
   set of scripts.
 - Don't over-pin premium models; prefer defaults with a sensible fallback chain.

@@ -81,6 +81,25 @@ Run the validator directly anytime:
 python skills/copilot-customization-assessment/scripts/validate_customizations.py .github
 ```
 
+### Examples
+
+**Example 1 — VS Code team, GitHub-hosted repo.** A team has a sprawling `.github/agents/`
+folder (12 single-purpose agents, one per Jira-like task) plus a few `.instructions.md`
+files with `applyTo: "**"`. Answering the intake questions (VS Code, `.github`, no known
+issues, no org restrictions, focus on architecture) produces a `review.md` flagging
+agent-per-task sprawl as **High** severity, recommending consolidation into 2–3 skills,
+and calling out the always-on `applyTo: "**"` instructions as a context-cost **Medium**
+finding — each with the exact file/line and a cited doc link.
+
+**Example 2 — JetBrains team, Copilot CLI/MCP disabled at org level.** A team's repo
+mixes a premium-model agent that calls a REST API for deterministic ticket lookups with a
+duplicated set of security guardrails copy-pasted across three agent files. Since agent
+plugins aren't available in JetBrains, the team vendors the toolkit with
+`scripts/install-into-repo.py`, then runs the skill from `.github/skills/` inside their
+IDE's chat. The resulting review flags the premium-model ticket lookups as AI-credit waste
+(**High**, since it's deterministic work a script/CLI should do) and recommends
+consolidating the duplicated guardrails into one shared instruction file.
+
 ## Consume without plugins (JetBrains / vendored)
 
 Agent plugins aren't available in every IDE (e.g. JetBrains). To vendor the customizations
@@ -92,6 +111,18 @@ python scripts/install-into-repo.py /path/to/target-repo
 
 This copies the `agents/` and `skills/` components into `<target>/.github/`. The plugin
 remains the single source of truth.
+
+## Known limitations
+
+- The bundled validator ([validate_customizations.py](skills/copilot-customization-assessment/scripts/validate_customizations.py))
+  uses a minimal, intentionally conservative YAML parser for frontmatter — it catches
+  common mechanical issues but is not a full YAML/JSON-Schema validator.
+- The agent does not execute or simulate the team's Copilot agents/skills; it performs a
+  static, evidence-based review of the customization files themselves.
+- Capability claims depend on the official docs being reachable at review time (the `web`
+  tool); if fetching fails, the agent should say so rather than rely on memory.
+- The toolkit assumes a Git-based customization folder (e.g. `.github`) as input; it does
+  not currently assess customizations distributed only as compiled/packaged artifacts.
 
 ## Design principles
 
